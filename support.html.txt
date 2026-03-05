@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Support - SwiftCounter</title>
+    <style>body { font-family: sans-serif; text-align: center; padding: 50px; }</style>
+</head>
+<body>
+    <h1>SwiftCounter Support</h1>
+    <p>Need help or found a bug? We are here for you!</p>
+    <p>Please send an email to:</p>
+    <h2 style="color: #007aff;">info@swiftcounter.com</h2>
+    <p><a href="index.html">Back to Home</a></p>
+</body>
+</html>

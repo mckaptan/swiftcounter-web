@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Policy - SwiftCounter</title>
+    <style>body { font-family: sans-serif; line-height: 1.6; padding: 40px; max-width: 800px; margin: auto; }</style>
+</head>
+<body>
+    <h1>Privacy Policy</h1>
+    <p>Last updated: March 5, 2026</p>
+    <p>SwiftCounter is a fast-paced object counting game. Your privacy is our priority.</p>
+    <h2>1. Data Collection</h2>
+    <p>We do not collect, store, or share any personal information. No registration is required to play the game.</p>
+    <h2>2. Camera and Images</h2>
+    <p>Any image processing happens locally on your device. We do not upload your photos or camera feed to any servers.</p>
+    <h2>3. Contact Us</h2>
+    <p>If you have questions, contact us at: <strong>info@swiftcounter.com</strong></p>
+</body>
+</html>
