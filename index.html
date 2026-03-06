@@ -8,7 +8,7 @@
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
             margin: 0;
-            padding: 20px 0;
+            padding: 40px 0;
             text-align: center; 
             background-image: url('background.png');
             background-size: cover;
@@ -20,71 +20,93 @@
         .logo { 
             width: 120px; 
             border-radius: 22%; 
-            margin-bottom: 15px; 
+            margin-bottom: 20px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
         h1 { 
-            font-size: 2.8em; 
+            font-size: 3em; 
             margin: 0 0 10px 0;
             text-shadow: 0 2px 4px rgba(255,255,255,0.5);
         }
         .description { 
-            font-size: 1.2em; 
+            font-size: 1.3em; 
             color: #222; 
-            margin-bottom: 20px; 
+            margin-bottom: 25px; 
             font-weight: 600; 
-            max-width: 600px;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
             padding: 0 20px;
         }
-        .language-container {
+        .lang-icons {
             margin-bottom: 30px;
         }
         .lang-icons img {
-            width: 28px;
-            height: 28px;
-            margin: 0 5px;
+            width: 30px;
+            height: 30px;
+            margin: 0 4px;
         }
         .btn { 
             background: #000; 
             color: #fff; 
-            padding: 15px 40px; 
+            padding: 18px 45px; 
             border-radius: 15px; 
             text-decoration: none; 
             display: inline-block; 
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 1.2em;
             box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
-        /* GALERİ DÜZENLEME */
+        /* ABİNİN SİTESİNDEKİ GİBİ ORTALANMIŞ GALERİ */
+        .gallery-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Masaüstünde ortalar */
+            margin-bottom: 50px;
+        }
+
         .screenshot-gallery {
             display: flex;
-            overflow-x: auto;
-            gap: 15px;
+            overflow-x: auto; /* Mobilde yana kaydırma */
+            gap: 20px;
             padding: 20px;
-            margin: 0 auto 40px auto;
-            max-width: 95%;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE */
+            max-width: 1200px; /* Galerinin çok yayılmasını engeller */
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0,0,0,0.2) transparent;
+            -webkit-overflow-scrolling: touch;
         }
-        .screenshot-gallery::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+        /* Kaydırma çubuğunu güzelleştirme */
+        .screenshot-gallery::-webkit-scrollbar {
+            height: 8px;
+        }
+        .screenshot-gallery::-webkit-scrollbar-thumb {
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
 
         .screenshot-gallery img {
             flex: 0 0 auto;
-            width: 220px; /* GENİŞLİĞİ SABİTLEDİK */
+            width: 240px; /* Abinin sitesindeki gibi ideal genişlik */
             height: auto;
             border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            border: 3px solid rgba(255,255,255,0.3);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-gallery img:hover {
+            transform: scale(1.03);
         }
 
         .links { 
-            margin-top: 30px; 
-            padding: 20px;
-            background: rgba(255,255,255,0.1);
+            margin-top: 20px; 
+            padding-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .links a { 
             margin: 0 15px; 
@@ -101,33 +123,33 @@
     
     <p class="description">
         Count objects at lightning speed and break records! <br>
-        Solo, random matches, or with friends.
+        Play solo, join random matches, or challenge your friends.
     </p>
 
-    <div class="language-container">
-        <div class="lang-icons">
-            <img src="eng.png" title="English">
-            <img src="tur.png" title="Turkish">
-            <img src="ita.png" title="Italian">
-            <img src="esp.png" title="Spanish">
-            <img src="ger.png" title="German">
-            <img src="fra.png" title="French">
-            <img src="por.png" title="Portuguese">
-            <img src="kor.png" title="Korean">
-            <img src="chi.png" title="Chinese">
-            <img src="jap.png" title="Japanese">
-        </div>
+    <div class="lang-icons">
+        <img src="eng.png" title="English">
+        <img src="tur.png" title="Turkish">
+        <img src="ita.png" title="Italian">
+        <img src="esp.png" title="Spanish">
+        <img src="ger.png" title="German">
+        <img src="fra.png" title="French">
+        <img src="por.png" title="Portuguese">
+        <img src="kor.png" title="Korean">
+        <img src="chi.png" title="Chinese">
+        <img src="jap.png" title="Japanese">
     </div>
     
     <a href="#" class="btn">Download on the App Store (Soon)</a>
 
-    <div class="screenshot-gallery">
-        <img src="mockup1.png">
-        <img src="mockup2.png">
-        <img src="mockup3.png">
-        <img src="mockup4.png">
-        <img src="mockup5.png">
-        <img src="mockup6.png">
+    <div class="gallery-wrapper">
+        <div class="screenshot-gallery">
+            <img src="mockup1.png" alt="Screen 1">
+            <img src="mockup2.png" alt="Screen 2">
+            <img src="mockup3.png" alt="Screen 3">
+            <img src="mockup4.png" alt="Screen 4">
+            <img src="mockup5.png" alt="Screen 5">
+            <img src="mockup6.png" alt="Screen 6">
+        </div>
     </div>
 
     <div class="links">
