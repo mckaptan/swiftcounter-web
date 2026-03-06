@@ -7,9 +7,8 @@
     <style>
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            line-height: 1.6; 
             margin: 0;
-            padding: 40px 0; /* Yanlardaki padding'i galeri için kaldırdık */
+            padding: 20px 0;
             text-align: center; 
             background-image: url('background.png');
             background-size: cover;
@@ -19,158 +18,116 @@
             color: #000;
         }
         .logo { 
-            width: 140px; 
+            width: 120px; 
             border-radius: 22%; 
-            margin-bottom: 25px; 
+            margin-bottom: 15px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
         h1 { 
-            font-size: 3.5em; 
-            margin-bottom: 10px; 
-            color: #000;
-            margin-top: 0;
+            font-size: 2.8em; 
+            margin: 0 0 10px 0;
             text-shadow: 0 2px 4px rgba(255,255,255,0.5);
         }
         .description { 
-            font-size: 1.4em; 
+            font-size: 1.2em; 
             color: #222; 
-            margin-bottom: 25px; 
+            margin-bottom: 20px; 
             font-weight: 600; 
-            max-width: 650px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
             padding: 0 20px;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.6);
         }
         .language-container {
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 20px;
-        }
-        .language-title {
-            font-weight: 700;
-            margin-bottom: 15px;
-            font-size: 1.1em;
-            color: #333;
-        }
-        .lang-icons {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
+            margin-bottom: 30px;
         }
         .lang-icons img {
-            width: 32px;
-            height: 32px;
-            transition: transform 0.2s;
-        }
-        .lang-icons img:hover {
-            transform: scale(1.2);
+            width: 28px;
+            height: 28px;
+            margin: 0 5px;
         }
         .btn { 
             background: #000; 
             color: #fff; 
-            padding: 20px 50px; 
-            border-radius: 18px; 
+            padding: 15px 40px; 
+            border-radius: 15px; 
             text-decoration: none; 
             display: inline-block; 
             font-weight: bold;
-            font-size: 1.3em;
-            transition: transform 0.2s, background 0.2s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            margin-bottom: 50px;
+            font-size: 1.1em;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
         }
-        .btn:hover { transform: scale(1.05); background: #222; }
 
-        /* Yeni Kaydırılabilir Galeri Stili */
+        /* GALERİ DÜZENLEME */
         .screenshot-gallery {
             display: flex;
             overflow-x: auto;
-            gap: 20px;
-            padding: 20px 40px;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: thin; /* Firefox için */
-            scrollbar-color: rgba(0,0,0,0.3) transparent;
+            gap: 15px;
+            padding: 20px;
+            margin: 0 auto 40px auto;
+            max-width: 95%;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE */
         }
-        /* Chrome, Safari ve Edge için scrollbar gizleme/düzenleme */
-        .screenshot-gallery::-webkit-scrollbar {
-            height: 8px;
-        }
-        .screenshot-gallery::-webkit-scrollbar-thumb {
-            background: rgba(0,0,0,0.2);
-            border-radius: 10px;
-        }
+        .screenshot-gallery::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
         .screenshot-gallery img {
             flex: 0 0 auto;
-            width: 280px; /* Görsel genişliği */
+            width: 220px; /* GENİŞLİĞİ SABİTLEDİK */
             height: auto;
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-            scroll-snap-align: center;
-            transition: transform 0.3s;
-        }
-        .screenshot-gallery img:hover {
-            transform: translateY(-10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border: 3px solid rgba(255,255,255,0.3);
         }
 
         .links { 
-            margin-top: 50px; 
-            border-top: 2px solid rgba(0,0,0,0.1); 
-            padding-top: 30px; 
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-bottom: 40px;
+            margin-top: 30px; 
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
         }
         .links a { 
-            margin: 0 18px; 
+            margin: 0 15px; 
             color: #000; 
             text-decoration: none; 
-            font-weight: 700; 
-            font-size: 1.1em;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.6);
+            font-weight: 700;
         }
-        .links a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
     <img src="logo.png" alt="SwiftCounter Logo" class="logo">
-
     <h1>SwiftCounter</h1>
     
     <p class="description">
-        Count the objects as fast as you can and break records! <br>
-        A new generation gaming experience where focus meets speed.
+        Count objects at lightning speed and break records! <br>
+        Solo, random matches, or with friends.
     </p>
 
     <div class="language-container">
-        <div class="language-title">Available in 10 languages</div>
         <div class="lang-icons">
-            <img src="tur.png" alt="Turkish" title="Turkish">
-            <img src="eng.png" alt="English" title="English">
-            <img src="ita.png" alt="Italian" title="Italian">
-            <img src="esp.png" alt="Spanish" title="Spanish">
-            <img src="ger.png" alt="German" title="German">
-            <img src="fra.png" alt="French" title="French">
-            <img src="por.png" alt="Portuguese" title="Portuguese">
-            <img src="kor.png" alt="Korean" title="Korean">
-            <img src="chi.png" alt="Chinese" title="Chinese">
-            <img src="jap.png" alt="Japanese" title="Japanese">
+            <img src="eng.png" title="English">
+            <img src="tur.png" title="Turkish">
+            <img src="ita.png" title="Italian">
+            <img src="esp.png" title="Spanish">
+            <img src="ger.png" title="German">
+            <img src="fra.png" title="French">
+            <img src="por.png" title="Portuguese">
+            <img src="kor.png" title="Korean">
+            <img src="chi.png" title="Chinese">
+            <img src="jap.png" title="Japanese">
         </div>
     </div>
     
     <a href="#" class="btn">Download on the App Store (Soon)</a>
 
     <div class="screenshot-gallery">
-        <img src="mockup1.png" alt="SwiftCounter Screen 1">
-        <img src="mockup2.png" alt="SwiftCounter Screen 2">
-        <img src="mockup3.png" alt="SwiftCounter Screen 3">
-        <img src="mockup4.png" alt="SwiftCounter Screen 4">
-        <img src="mockup5.png" alt="SwiftCounter Screen 5">
-        <img src="mockup6.png" alt="SwiftCounter Screen 6">
+        <img src="mockup1.png">
+        <img src="mockup2.png">
+        <img src="mockup3.png">
+        <img src="mockup4.png">
+        <img src="mockup5.png">
+        <img src="mockup6.png">
     </div>
 
     <div class="links">
