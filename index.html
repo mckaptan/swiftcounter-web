@@ -8,7 +8,7 @@
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
             margin: 0;
-            padding: 40px 0;
+            padding: 40px 0 0 0;
             text-align: center; 
             background-image: url('background.png');
             background-size: cover;
@@ -57,62 +57,67 @@
             font-size: 1.2em;
             box-shadow: 0 8px 15px rgba(0,0,0,0.2);
             margin-bottom: 50px;
+            transition: transform 0.2s;
         }
+        .btn:hover { transform: scale(1.05); }
 
-        /* ABİNİN SİTESİNDEKİ GİBİ ORTALANMIŞ GALERİ */
+        /* Ortalanmış Galeri Düzeni */
         .gallery-wrapper {
             width: 100%;
             display: flex;
-            justify-content: center; /* Masaüstünde ortalar */
-            margin-bottom: 50px;
+            justify-content: center;
+            margin-bottom: 40px;
         }
-
         .screenshot-gallery {
             display: flex;
-            overflow-x: auto; /* Mobilde yana kaydırma */
+            overflow-x: auto;
             gap: 20px;
             padding: 20px;
-            max-width: 1200px; /* Galerinin çok yayılmasını engeller */
-            scrollbar-width: thin;
-            scrollbar-color: rgba(0,0,0,0.2) transparent;
+            max-width: 100%;
+            scrollbar-width: none;
             -webkit-overflow-scrolling: touch;
         }
-
-        /* Kaydırma çubuğunu güzelleştirme */
-        .screenshot-gallery::-webkit-scrollbar {
-            height: 8px;
-        }
-        .screenshot-gallery::-webkit-scrollbar-thumb {
-            background: rgba(0,0,0,0.2);
-            border-radius: 10px;
-        }
-
+        .screenshot-gallery::-webkit-scrollbar { display: none; }
+        
         .screenshot-gallery img {
             flex: 0 0 auto;
-            width: 240px; /* Abinin sitesindeki gibi ideal genişlik */
+            width: 240px;
             height: auto;
             border-radius: 20px;
             box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
         }
 
-        .screenshot-gallery img:hover {
-            transform: scale(1.03);
-        }
-
-        .links { 
-            margin-top: 20px; 
-            padding-top: 30px;
+        /* Profesyonel Footer (Abinin sitesi gibi) */
+        .footer {
+            margin-top: 60px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
             border-top: 1px solid rgba(0,0,0,0.1);
-            max-width: 600px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
+            font-size: 0.9em;
         }
-        .links a { 
-            margin: 0 15px; 
-            color: #000; 
-            text-decoration: none; 
+        .footer-left {
+            color: #444;
+            font-weight: 500;
+        }
+        .footer-right a {
+            margin-left: 20px;
+            color: #000;
+            text-decoration: none;
             font-weight: 700;
+        }
+        .footer-right a:hover { text-decoration: underline; }
+
+        @media (max-width: 700px) {
+            .footer { flex-direction: column; gap: 20px; text-align: center; }
+            .footer-right a { margin: 0 10px; }
+            h1 { font-size: 2.2em; }
         }
     </style>
 </head>
@@ -152,9 +157,15 @@
         </div>
     </div>
 
-    <div class="links">
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy Policy</a>
+    <div class="footer">
+        <div class="footer-left">
+            © 2026 SwiftCounter. All rights reserved.
+        </div>
+        <div class="footer-right">
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="support.html">Contact</a>
+        </div>
     </div>
 
 </body>
