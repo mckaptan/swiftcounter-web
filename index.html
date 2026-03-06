@@ -42,7 +42,6 @@
             padding: 0 20px;
         }
 
-        /* DİL İKONLARI VE HOVER EFEKTİ */
         .lang-icons {
             margin-bottom: 30px;
         }
@@ -57,7 +56,6 @@
             transform: scale(1.3);
         }
 
-        /* MAĞAZA BUTONLARI VE HOVER EFEKTİ */
         .store-container {
             display: flex;
             justify-content: center;
@@ -66,7 +64,7 @@
             flex-wrap: wrap;
         }
         .store-btn {
-            transition: transform 0.3s ease, opacity 0.2s ease;
+            transition: transform 0.3s ease;
         }
         .store-btn:hover {
             transform: scale(1.08);
@@ -78,7 +76,7 @@
             border-radius: 10px;
         }
 
-        /* GALERİ VE MOCKUP BÜYÜME EFEKTİ */
+        /* --- GALERİ DÜZENLEME (KESİLME SORUNU ÇÖZÜMÜ) --- */
         .gallery-wrapper {
             width: 100%;
             display: flex;
@@ -88,11 +86,14 @@
         .screenshot-gallery {
             display: flex;
             overflow-x: auto;
-            gap: 20px;
-            padding: 20px;
+            gap: 25px;
+            /* Üstteki kesilmeyi önlemek için geniş bir padding ekledik */
+            padding: 60px 40px; 
+            margin-top: -40px; /* Padding'in yarattığı boşluğu dengelemek için */
             max-width: 100%;
             scrollbar-width: none;
             -webkit-overflow-scrolling: touch;
+            align-items: center; /* Görselleri dikeyde ortalar */
         }
         .screenshot-gallery::-webkit-scrollbar { display: none; }
         
@@ -102,19 +103,22 @@
             height: auto;
             border-radius: 20px;
             box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-            /* Büyüme efekti için geçiş süresi */
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
-        }
-        /* Mockuplar üzerine gelince büyüme (Hover) */
-        .screenshot-gallery img:hover { 
-            transform: scale(1.1) translateY(-10px); 
-            z-index: 10;
+            /* Görselin transform merkezini orta yapıyoruz */
+            transform-origin: center center; 
         }
 
-        /* ŞEFFAF VE KUTUSUZ FOOTER */
+        .screenshot-gallery img:hover { 
+            /* Sadece scale kullanarak her yöne büyümesini sağlıyoruz */
+            transform: scale(1.15); 
+            z-index: 99;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        /* FOOTER DÜZENİ */
         .footer {
-            margin-top: 60px;
+            margin-top: 40px;
             padding: 40px 20px;
             display: flex;
             justify-content: space-between;
@@ -127,22 +131,21 @@
         .footer-left {
             color: #444;
             font-weight: 500;
-            text-shadow: 0 1px 1px rgba(255,255,255,0.5);
         }
         .footer-right a {
             margin-left: 20px;
             color: #000;
             text-decoration: none;
             font-weight: 700;
-            text-shadow: 0 1px 1px rgba(255,255,255,0.5);
-            transition: color 0.2s;
         }
-        .footer-right a:hover { color: #555; text-decoration: underline; }
+        .footer-right a:hover { text-decoration: underline; }
 
         @media (max-width: 700px) {
             .footer { flex-direction: column; gap: 20px; text-align: center; }
             .footer-right a { margin: 0 10px; }
             h1 { font-size: 2.2em; }
+            .screenshot-gallery { padding: 40px 20px; }
+            .screenshot-gallery img { width: 200px; }
         }
     </style>
 </head>
