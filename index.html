@@ -22,7 +22,10 @@
             border-radius: 22%; 
             margin-bottom: 20px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
         }
+        .logo:hover { transform: scale(1.1); }
+
         h1 { 
             font-size: 3em; 
             margin: 0 0 10px 0;
@@ -38,34 +41,44 @@
             margin-right: auto;
             padding: 0 20px;
         }
+
+        /* DİL İKONLARI VE HOVER EFEKTİ */
         .lang-icons {
             margin-bottom: 30px;
         }
         .lang-icons img {
             width: 30px;
             height: 30px;
-            margin: 0 4px;
+            margin: 0 6px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .lang-icons img:hover {
+            transform: scale(1.3);
         }
 
-        /* YENİ APP STORE BUTON STİLİ (store.png) */
-        .store-btn {
-            display: inline-block;
+        /* MAĞAZA BUTONLARI VE HOVER EFEKTİ */
+        .store-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
             margin-bottom: 50px;
-            transition: transform 0.2s ease, opacity 0.2s ease;
+            flex-wrap: wrap;
+        }
+        .store-btn {
+            transition: transform 0.3s ease, opacity 0.2s ease;
         }
         .store-btn:hover {
-            transform: scale(1.05); /* Üzerine gelince hafif büyüme */
-            opacity: 0.9; /* Hafif şeffaflaşma */
+            transform: scale(1.08);
         }
         .store-btn img {
-            width: 200px; /* Senin belirttiğin boyut */
-            height: 40px;
+            width: 200px;
+            height: 80px;
             display: block;
-            border-radius: 8px; /* Görselin köşelerini hafif yumuşatmak için opsiyonel */
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Hafif gölge */
+            border-radius: 10px;
         }
 
-        /* Ortalanmış Galeri Düzeni */
+        /* GALERİ VE MOCKUP BÜYÜME EFEKTİ */
         .gallery-wrapper {
             width: 100%;
             display: flex;
@@ -89,13 +102,20 @@
             height: auto;
             border-radius: 20px;
             box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            /* Büyüme efekti için geçiş süresi */
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+        /* Mockuplar üzerine gelince büyüme (Hover) */
+        .screenshot-gallery img:hover { 
+            transform: scale(1.1) translateY(-10px); 
+            z-index: 10;
         }
 
-        /* GÜNCELLENMİŞ ŞEFFAF FOOTER (Kutu ve Çizgi Kaldırıldı) */
+        /* ŞEFFAF VE KUTUSUZ FOOTER */
         .footer {
             margin-top: 60px;
             padding: 40px 20px;
-            /* background, backdrop-filter ve border-top KALDIRILDI */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -107,22 +127,22 @@
         .footer-left {
             color: #444;
             font-weight: 500;
-            text-shadow: 0 1px 1px rgba(255,255,255,0.5); /* Okunabilirlik için hafif gölge */
+            text-shadow: 0 1px 1px rgba(255,255,255,0.5);
         }
         .footer-right a {
             margin-left: 20px;
             color: #000;
             text-decoration: none;
             font-weight: 700;
-            text-shadow: 0 1px 1px rgba(255,255,255,0.5); /* Okunabilirlik için hafif gölge */
+            text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+            transition: color 0.2s;
         }
-        .footer-right a:hover { text-decoration: underline; }
+        .footer-right a:hover { color: #555; text-decoration: underline; }
 
         @media (max-width: 700px) {
             .footer { flex-direction: column; gap: 20px; text-align: center; }
             .footer-right a { margin: 0 10px; }
             h1 { font-size: 2.2em; }
-            .store-btn img { width: 180px; height: 36px; } /* Mobilde biraz küçültme */
         }
     </style>
 </head>
@@ -149,9 +169,14 @@
         <img src="jap.png" title="Japanese">
     </div>
     
-    <a href="#" class="store-btn">
-        <img src="store.png" alt="Download on the App Store">
-    </a>
+    <div class="store-container">
+        <a href="#" class="store-btn">
+            <img src="applestore.png" alt="Download on the App Store">
+        </a>
+        <a href="#" class="store-btn">
+            <img src="playstore.png" alt="Get it on Google Play">
+        </a>
+    </div>
 
     <div class="gallery-wrapper">
         <div class="screenshot-gallery">
