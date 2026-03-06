@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwiftCounter - Hızlı Nesne Sayma Oyunu</title>
+    <title>SwiftCounter - Fast Object Counting Game</title>
     <style>
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
@@ -11,16 +11,13 @@
             margin: 0;
             padding: 40px 20px;
             text-align: center; 
-            /* Arka plan ayarları */
             background-image: url('background.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             background-repeat: no-repeat;
-            color: #000; /* Yazı rengi siyah */
+            color: #000;
         }
-        /* Şeffaf beyaz container kaldırıldı, içerikler doğrudan body'de */
-        
         .logo { 
             width: 140px; 
             border-radius: 22%; 
@@ -32,20 +29,44 @@
             margin-bottom: 10px; 
             color: #000;
             margin-top: 0;
-            /* Arka plan üzerinde okunabilirlik için gölge */
             text-shadow: 0 2px 4px rgba(255,255,255,0.5);
         }
         .description { 
             font-size: 1.4em; 
             color: #222; 
-            margin-bottom: 35px; 
-            padding: 0;
-            font-weight: 600; /* Daha kalın yazılar */
-            max-width: 600px;
+            margin-bottom: 25px; 
+            font-weight: 600; 
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
-            /* Arka plan üzerinde okunabilirlik için gölge */
             text-shadow: 0 1px 2px rgba(255,255,255,0.6);
+        }
+        /* Dil Bölümü */
+        .language-container {
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .language-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #333;
+        }
+        .lang-icons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .lang-icons img {
+            width: 32px; /* İkon boyutu buradan ayarlanabilir */
+            height: 32px;
+            transition: transform 0.2s;
+        }
+        .lang-icons img:hover {
+            transform: scale(1.2);
         }
         .btn { 
             background: #000; 
@@ -59,22 +80,19 @@
             transition: transform 0.2s, background 0.2s;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-        .btn:hover { 
-            transform: scale(1.05);
-            background: #222;
-        }
+        .btn:hover { transform: scale(1.05); background: #222; }
         .mockup { 
             width: 100%; 
             max-width: 750px; 
             height: auto; 
             border-radius: 20px; 
-            margin-top: 60px; 
+            margin-top: 50px; 
             margin-bottom: 60px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
         .links { 
             margin-top: 50px; 
-            border-top: 2px solid rgba(0,0,0,0.1); /* Hafif belirgin çizgi */
+            border-top: 2px solid rgba(0,0,0,0.1); 
             padding-top: 30px; 
             max-width: 600px;
             margin-left: auto;
@@ -82,16 +100,13 @@
         }
         .links a { 
             margin: 0 18px; 
-            color: #000; /* Link rengi siyah */
+            color: #000; 
             text-decoration: none; 
             font-weight: 700; 
             font-size: 1.1em;
-            /* Linkler için gölge */
             text-shadow: 0 1px 2px rgba(255,255,255,0.6);
         }
-        .links a:hover {
-            text-decoration: underline;
-        }
+        .links a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -101,18 +116,34 @@
     <h1>SwiftCounter</h1>
     
     <p class="description">
-        Görsellerdeki nesneleri en hızlı sen say, rekorları kır! <br>
-        Dikkat ve hızın buluştuğu yeni nesil oyun deneyimi.
+        Count the objects as fast as you can and break records! <br>
+        A new generation gaming experience where focus meets speed.
     </p>
+
+    <div class="language-container">
+        <div class="language-title">Available in 10 languages</div>
+        <div class="lang-icons">
+            <img src="tur.png" alt="Turkish" title="Turkish">
+            <img src="eng.png" alt="English" title="English">
+            <img src="ita.png" alt="Italian" title="Italian">
+            <img src="esp.png" alt="Spanish" title="Spanish">
+            <img src="ger.png" alt="German" title="German">
+            <img src="fra.png" alt="French" title="French">
+            <img src="por.png" alt="Portuguese" title="Portuguese">
+            <img src="kor.png" alt="Korean" title="Korean">
+            <img src="chi.png" alt="Chinese" title="Chinese">
+            <img src="jap.png" alt="Japanese" title="Japanese">
+        </div>
+    </div>
     
-    <a href="#" class="btn">App Store'dan İndir (Yakında)</a>
+    <a href="#" class="btn">Download on the App Store (Soon)</a>
 
     <br>
-    <img src="mockup.png" alt="SwiftCounter Oyun Ekranları" class="mockup">
+    <img src="mockup.png" alt="SwiftCounter Game Screens" class="mockup">
 
     <div class="links">
-        <a href="support.html">Destek (Support)</a>
-        <a href="privacy.html">Gizlilik Politikası (Privacy)</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
     </div>
 
 </body>
