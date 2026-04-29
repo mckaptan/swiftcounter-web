@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwiftCounter - Fast Object Counting Game</title>
+    <!-- Apple ve Google için Geliştirici Doğrulaması -->
+    <meta name="description" content="SwiftCounter - Count objects at lightning speed and break records! Available on iOS and Android.">
     <style>
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
@@ -71,7 +73,7 @@
         }
         .store-btn img {
             width: 200px;
-            height: 80px;
+            height: 60px; /* Buton oranını düzelttik */
             display: block;
             border-radius: 10px;
         }
@@ -112,10 +114,9 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        /* --- MOBİL UYUMLU GÜNCELLENMİŞ FOOTER --- */
         .footer {
             margin-top: 40px;
-            padding: 40px 20px 60px 20px; /* Alttan ekstra boşluk bıraktık */
+            padding: 40px 20px 60px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -139,22 +140,18 @@
         }
         .footer-right a:hover { text-decoration: underline; }
 
-        /* MOBİL DÜZENLEMELERİ */
         @media (max-width: 768px) {
             h1 { font-size: 2.2em; }
             .description { font-size: 1.1em; }
-            
             .footer { 
-                flex-direction: column; /* Mobilde her şeyi alt alta diziyoruz */
+                flex-direction: column; 
                 gap: 20px; 
                 text-align: center; 
             }
             .footer-right {
-                flex-direction: column; /* Linkleri de alt alta diziyoruz */
-                gap: 10px;
+                flex-direction: column; 
+                gap: 15px;
             }
-            .footer-right a { margin: 0; }
-            
             .screenshot-gallery { padding: 40px 20px; }
             .screenshot-gallery img { width: 200px; }
         }
@@ -205,12 +202,12 @@
 
     <div class="footer">
         <div class="footer-left">
-            © 2026 SwiftCounter. All rights reserved.
+            © 2026 Kaptan Games. All rights reserved.
         </div>
         <div class="footer-right">
             <a href="terms.html">Terms & Conditions</a>
             <a href="privacy.html">Privacy Policy</a>
-            <a href="support.html">Contact</a>
+            <a href="mailto:kaptangames.official@gmail.com">Contact Support</a>
         </div>
     </div>
 
